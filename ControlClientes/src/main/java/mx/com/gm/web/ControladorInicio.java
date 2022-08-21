@@ -35,4 +35,12 @@ public class ControladorInicio {
         personaService.guardar(persona);
         return "redirect:/";
     }
+    
+    @GetMapping("/editar/{idPersona}")
+    public String editar(Persona persona, Model model) { //Spring busca un objeto de tipo persona si no lo encuentra crea el objeto de tipo persona de ese modo no es necesario usar el new Persona() ya se hace automatico
+        persona = personaService.encontrarPersona(persona);
+        model.addAttribute("persona", persona);
+        return "modificar";
+    }
+    
 }
