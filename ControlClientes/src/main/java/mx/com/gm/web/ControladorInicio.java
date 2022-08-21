@@ -43,4 +43,10 @@ public class ControladorInicio {
         return "modificar";
     }
     
+      @GetMapping("/eliminar")
+    public String eliminar(Persona persona, Model model) { //Spring busca un objeto de tipo persona si no lo encuentra crea el objeto de tipo persona de ese modo no es necesario usar el new Persona() ya se hace automatico
+        personaService.eliminar(persona);
+        return "redirect:/";
+    }
+    
 }
