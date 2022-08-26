@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioDao extends JpaRepository<Usuario, Long>{
     
-    Usuario finByUsername(String username); //Filtra un objeto filtrado por el username
+    Usuario findByUsername(String username); //Filtra un objeto filtrado por el username
 }
